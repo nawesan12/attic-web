@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-bg: #111;
+  --primary-text: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*::selection {
+  color: var(--primary-bg);
+  background: var(--primary-text);
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  scroll-behavior: smooth;
+  cursor:crosshair;
 }
 
 a {
@@ -11,6 +33,23 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+li {
+  list-style:none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-text);
+}
+
+.light-mode {
+  --primary-bg: #fff;
+  --primary-text: #222;
 }
