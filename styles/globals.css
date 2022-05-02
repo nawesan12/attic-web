@@ -3,6 +3,7 @@
 :root {
   --primary-bg: #111;
   --primary-text: #fff;
+  --selection-color: #999;
 }
 
 * {
@@ -14,7 +15,7 @@
 }
 
 *::selection {
-  color: var(--primary-bg);
+  color: var(--selection-color);
   background: var(--primary-text);
 }
 

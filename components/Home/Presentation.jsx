@@ -1,3 +1,5 @@
+import CornerLogo from "./Visual/CornerLogo";
+
 export default function Presentation() {
     return (
         <>
@@ -17,7 +19,7 @@ export default function Presentation() {
             </section>
 
             <section className="bottom-row">
-                <p>Pico de minecra</p>
+                <CornerLogo />
 
                 <span className="scroll-row" />
 
@@ -50,6 +52,10 @@ export default function Presentation() {
                 display:flex;
                 justify-content:space-between;
                 align-items:end;
+            }
+
+            .corner {
+                transition: all .2s ease;
             }
 
             .corner .line {
@@ -96,6 +102,18 @@ export default function Presentation() {
                 height:.6rem;
                 background:var(--primary-text);
                 border-radius: 1rem;
+            }
+
+            @media screen and (max-width:780px) {
+                .bottom-row {
+                    justify-content:center;
+                }
+            }
+
+            @media screen and (max-width:1000px) {
+                .bottom-row .corner {
+                    opacity:0;
+                }
             }
         `}</style>
         </>
