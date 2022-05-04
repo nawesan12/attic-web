@@ -34,6 +34,18 @@ export default function Presentation() {
         </section>
 
         <style jsx>{`
+            @keyframes bounce {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-4px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
             .presentation {
                 height:min(100vh, 100vh);
                 background: url('/backgrounds/shiny_bg.svg') no-repeat center center;
@@ -102,9 +114,14 @@ export default function Presentation() {
                 height:.6rem;
                 background:var(--primary-text);
                 border-radius: 1rem;
+                animation: bounce 1.2s ease-in infinite;
             }
 
             @media screen and (max-width:780px) {
+                .corner {
+                    opacity:0;
+                }
+
                 .bottom-row {
                     justify-content:center;
                 }
