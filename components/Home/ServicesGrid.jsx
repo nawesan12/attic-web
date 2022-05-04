@@ -21,7 +21,7 @@ export default function ServicesGrid() {
 
             <style jsx>{`
                 .services {
-                    height:min(100vh, 100vh);
+                    height:100vh;
                     display:flex;
                     justify-content:center;
                     align-items:center;

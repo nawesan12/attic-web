@@ -49,6 +49,7 @@ export default function MenuButton({ setMenuOpen, isOpen }) {
                 height:.4rem;
                 background:var(--primary-text);
                 margin-block: .1rem;
+                border-radius: .1rem 0 0 .1rem;
             }
 
             .one {
