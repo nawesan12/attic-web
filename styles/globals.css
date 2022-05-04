@@ -43,7 +43,7 @@ li {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-bg);
+  background: #000;
 }
 
 ::-webkit-scrollbar-thumb {

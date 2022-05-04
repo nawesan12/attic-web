@@ -1,51 +1,79 @@
+import { useState } from 'react'
+import MenuButton from "./MenuButton";
+import LinkTo from "./LinkTo";
+
 export default function Menu() {
+
+    const [isOpen, setMenuOpen] = useState(false);
+
     return (
-        <>
-        <section className="menu-btn">
-            <div className="menu-lines">
-                <div className="line one"></div>
-                <div className="line two"></div>
-                <div className="line three"></div>
-            </div>
-            <h3>Menu</h3>
+        <>        
+        <MenuButton  setMenuOpen={setMenuOpen} isOpen={isOpen} />
+
+        <section className="menu">
+            <section className="menu-modal">
+                <nav>
+                    <ul>
+                        <li>
+                            <LinkTo destiny={"/"} name={"Inicio"} close={() => setMenuOpen(false)}/>
+                        </li>
+                        <li>
+                            <LinkTo destiny={"/services"} name={"Servicios"} close={() => setMenuOpen(false)}/>                            
+                        </li>
+                        <li>
+                            <LinkTo destiny={"/contact"} name={"Contacto"} close={() => setMenuOpen(false)}/>                            
+                        </li>
+                        <li>
+                            <LinkTo destiny={"/projects"} name={"Proyectos"} close={() => setMenuOpen(false)}/>                            
+                        </li>
+                        <li>
+                            <LinkTo destiny={"/staff"} name={"Staff"} close={() => setMenuOpen(false)}/>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section className="section-overview">
+
+                </section>
+            </section>
         </section>
 
         <style jsx>{`
-            .menu-btn {
-                position: fixed;
-                top: 0;
-                right: 0;
-                padding:2rem;
+            .menu {
+                height: 100vh;
+                width: 100vw;
+                position:fixed;
+                z-index: 100;
+                background-image: url('/backgrounds/menu_bg.png');
+                background-color: var(--primary-bg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size:cover; 
+                transition: all .3s ease-in-out; 
+                ${isOpen ? 'transform: translateY(0%);' : 'transform: translateY(-100%);'}
+                display:grid;
+                place-items:center;
+            }
+
+            .menu-modal {
+                height: 75vh;
+                width:70vw;
+                background: var(--primary-bg);
+                border: .8rem solid var(--primary-text);
                 display:flex;
                 align-items:center;
-            }    
-
-            h3 {
-                margin-inline: .5rem 0;
+                justify-content:space-evenly;
             }
 
-            .menu-lines {
-                display:flex;
-                flex-direction:column;
-                align-items:end;
+            nav li {
+                margin: 1rem 0;
             }
 
-            .line {
-                height:.4rem;
-                background:var(--primary-text);
-                margin-block: .1rem;
-            }
-
-            .one {
-                width: 5rem;
-            } 
-
-            .two {
-                width:2rem;
-            }
-
-            .three {
-                width:3.5rem;
+            .section-overview {
+                height:50%;
+                width:min(20rem, 20rem);
+                border: 2px solid var(--primary-text);
+                border-radius: .5rem;
             }
         `}</style>
         </>
