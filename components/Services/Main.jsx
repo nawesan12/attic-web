@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import Aside from "./Aside";
 import Outlet from "./Outlet";
 
 export default function Main() {
+
+    const [selectedService, setSelectedService] = useState('none')
+
     return (
         <>
         <section className="services-main">
-            <Aside />
-            <Outlet />
+            <Aside selectedService={selectedService} setSelectedService={setSelectedService} />
+            <Outlet selectedService={selectedService} />
         </section>
 
         <style jsx>{`

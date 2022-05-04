@@ -4,6 +4,9 @@
   --primary-bg: #111;
   --primary-text: #fff;
   --selection-color: #999;
+  --magenta: #B10D62;
+  --cyan: #158BAB;
+  --yellow: #FBB847;
 }
 
 * {
@@ -15,8 +18,8 @@
 }
 
 *::selection {
-  color: var(--selection-color);
-  background: var(--primary-text);
+  color: var(--primary-bg);
+  background: var(--yellow);
 }
 
 html,

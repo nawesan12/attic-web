@@ -1,16 +1,16 @@
-export default function Aside() {
+export default function Aside({ selectedService, setSelectedService }) {
     return (
         <>
         <aside className="services-aside">
 
-            <h1 className="main-title">attic.</h1>
+            <h1 className="main-title" onClick={() => setSelectedService('none')}>attic.</h1>
         
             <nav>
                 <ul>
-                    <li>&#9656; Web Development</li>
-                    <li>&#9656; Web Design</li>
-                    <li>&#9656; Marketing Services</li>
-                    <li>&#9656; Extra Services</li>
+                    <li onClick={() => setSelectedService('WEB_DEVELOPMENT')}>&#9656; Web Development</li>
+                    <li onClick={() => setSelectedService('WEB_DESIGN')}>&#9656; Web Design</li>
+                    <li onClick={() => setSelectedService('MARKETING')}>&#9656; Marketing Services</li>
+                    <li onClick={() => setSelectedService('EXTRA_SERVICES')}>&#9656; Extra Services</li>
                 </ul>
             </nav>
 
@@ -19,7 +19,7 @@ export default function Aside() {
                 <ul>
                     <li>
                         <a href="https://google.com" target="_blank" rel="noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="#06b" strokeLinecap="round" strokeLinejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <rect x="4" y="4" width="16" height="16" rx="2" />
                                 <line x1="8" y1="11" x2="8" y2="16" />
@@ -67,11 +67,17 @@ export default function Aside() {
 
             ul li {
                 margin: 1rem 0;
+                border-radius:.4rem;
+                padding:.25rem;
             }
 
             nav {
                 padding-inline:2rem 0;
                 align-self:start;
+            }
+
+            nav li:hover {
+                background: #555;
             }
 
             .main-title {
