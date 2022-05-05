@@ -3,7 +3,7 @@ export default function Aside({ selectedService, setSelectedService }) {
         <>
         <aside className="services-aside">
 
-            <h1 className="main-title" onClick={() => setSelectedService('none')}>attic.</h1>
+            <h1 className="main-title" onClick={() => setSelectedService('none')}>attic</h1>
         
             <nav>
                 <ul>
@@ -17,7 +17,7 @@ export default function Aside({ selectedService, setSelectedService }) {
                         <span className={selectedService === 'MARKETING' ? 'rotated' : ""}>&#9656;</span> Marketing Services
                     </li>
                     <li onClick={() => setSelectedService('SEO')}>
-                        <span className={selectedService === 'SEO' ? 'rotated' : ""}>&#9656;</span> Extra Services
+                        <span className={selectedService === 'SEO' ? 'rotated' : ""}>&#9656;</span> SEO
                     </li>
                 </ul>
             </nav>
