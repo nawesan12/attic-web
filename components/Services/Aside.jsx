@@ -7,10 +7,18 @@ export default function Aside({ selectedService, setSelectedService }) {
         
             <nav>
                 <ul>
-                    <li onClick={() => setSelectedService('WEB_DEVELOPMENT')}>&#9656; Web Development</li>
-                    <li onClick={() => setSelectedService('WEB_DESIGN')}>&#9656; Web Design</li>
-                    <li onClick={() => setSelectedService('MARKETING')}>&#9656; Marketing Services</li>
-                    <li onClick={() => setSelectedService('EXTRA_SERVICES')}>&#9656; Extra Services</li>
+                    <li onClick={() => setSelectedService('WEB_DEVELOPMENT')}>
+                        <span className={selectedService === 'WEB_DEVELOPMENT' ? 'rotated' : ""}>&#9656;</span>  Web Development
+                    </li>
+                    <li onClick={() => setSelectedService('WEB_DESIGN')}>
+                        <span className={selectedService === 'WEB_DESIGN' ? 'rotated' : ""}>&#9656;</span> Web Design
+                    </li>
+                    <li onClick={() => setSelectedService('MARKETING')}>
+                        <span className={selectedService === 'MARKETING' ? 'rotated' : ""}>&#9656;</span> Marketing Services
+                    </li>
+                    <li onClick={() => setSelectedService('SEO')}>
+                        <span className={selectedService === 'SEO' ? 'rotated' : ""}>&#9656;</span> Extra Services
+                    </li>
                 </ul>
             </nav>
 
@@ -80,6 +88,11 @@ export default function Aside({ selectedService, setSelectedService }) {
                 background: #555;
             }
 
+            nav li span {
+                display:inline-block;
+                transition: all .2s ease;
+            }
+
             .main-title {
                 font-size:calc(3.5vw + 3.5vh);
                 text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0px #B10D62, 4px 4px 0px #FBB847, 6px 6px 0px #158BAB;
@@ -95,6 +108,10 @@ export default function Aside({ selectedService, setSelectedService }) {
 
             .social-media li {
                 margin:2rem 1rem 0;
+            }
+
+            .rotated {
+                transform: rotate(-90deg);
             }
         `}</style>
         </>

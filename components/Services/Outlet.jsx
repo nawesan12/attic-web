@@ -18,7 +18,7 @@ export default function Outlet({ selectedService }) {
             { selectedService === 'WEB_DEVELOPMENT' && <WebDevelopment /> }
             { selectedService === 'WEB_DESIGN' && <WebDesign /> }
             { selectedService === 'MARKETING' && <Marketing /> }
-            { selectedService === 'EXTRA_SERVICES' && <SEO /> }
+            { selectedService === 'SEO' && <SEO /> }
         </section>
 
         <style jsx>{`

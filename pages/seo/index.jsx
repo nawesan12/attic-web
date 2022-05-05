@@ -1,4 +1,4 @@
-export default function Staff() {
+export default function Seo() {
     return (
         <></>
     )
